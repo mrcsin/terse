@@ -1,5 +1,11 @@
 # terse
 
+[![C#](https://custom-icon-badges.demolab.com/badge/C%23-%23239120.svg?logo=cshrp&logoColor=white)](#)
+[![.NET](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=fff)](#)
+[![NuGet](https://img.shields.io/nuget/v/terse?logo=nuget&logoColor=fff&label=NuGet)](https://www.nuget.org/packages/Terse)
+[![release](https://github.com/mrcsin/terse/actions/workflows/release.yml/badge.svg)](https://github.com/mrcsin/terse/actions/workflows/release.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A comment linter for C#, built for code that AI agents write and humans review. It runs
 as a dotnet tool, on demand or from a git hook. The linter reads the comment trivia of
 every `.cs` file and flags any character outside ASCII, XML docs that grew
