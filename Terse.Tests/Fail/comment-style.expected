@@ -1,0 +1,6 @@
+comment-style.cs:5: comment-style  use /// doc comments, not /** */
+comment-style.cs:8: comment-style  one space after //
+comment-style.cs:11: comment-style  one space after //
+comment-style.cs:14: comment-style  one space after //
+comment-style.cs:17: comment-style  one space after //
+comment-style.cs:20: comment-style  one space after //

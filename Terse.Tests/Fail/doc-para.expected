@@ -1,0 +1,3 @@
+doc-para.cs:6: doc-para  XML doc must be one paragraph (no <para>)
+doc-para.cs:9: doc-para  XML doc must be one paragraph (no <para>)
+doc-para.cs:13: doc-para  blank /// line splits the doc into paragraphs

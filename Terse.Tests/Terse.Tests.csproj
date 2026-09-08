@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Terse/Terse.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pass.cs;Fail/*.cs" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fail/*.expected" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

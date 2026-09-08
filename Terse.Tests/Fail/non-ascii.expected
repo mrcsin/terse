@@ -1,0 +1,15 @@
+non-ascii.cs:5: non-ascii  non-ASCII character U+041E; source is ASCII only
+non-ascii.cs:8: non-ascii  non-ASCII character U+0441; source is ASCII only
+non-ascii.cs:12: non-ascii  non-ASCII character U+0432; source is ASCII only
+non-ascii.cs:15: banner  decorative separator comment
+non-ascii.cs:15: non-ascii  non-ASCII character U+0412; source is ASCII only
+non-ascii.cs:18: non-ascii  non-ASCII character U+2500; source is ASCII only
+non-ascii.cs:21: non-ascii  non-ASCII character U+65E5; source is ASCII only
+non-ascii.cs:24: non-ascii  non-ASCII character U+1F680; source is ASCII only
+non-ascii.cs:27: non-ascii  non-ASCII character U+2014; source is ASCII only
+non-ascii.cs:30: non-ascii  non-ASCII character U+00A0; source is ASCII only
+non-ascii.cs:33: non-ascii  non-ASCII character U+202E; source is ASCII only
+non-ascii.cs:36: non-ascii  non-ASCII character U+043F; source is ASCII only
+non-ascii.cs:38: non-ascii  non-ASCII character U+043F; source is ASCII only
+non-ascii.cs:40: non-ascii  non-ASCII character U+1F680; source is ASCII only
+non-ascii.cs:42: non-ascii  non-ASCII character U+041F; source is ASCII only

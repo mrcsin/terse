@@ -1,0 +1,3 @@
+doc-long.cs:5: doc-long  <summary> is 4 lines; one tight fact, max 3 lines
+doc-long.cs:13: doc-long  <summary> is 5 lines; one tight fact, max 3 lines
+doc-long.cs:21: doc-long  <remarks> is 4 lines; one tight fact, max 3 lines

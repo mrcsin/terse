@@ -1,0 +1,2 @@
+comment-essay.cs:5: comment-essay  4 consecutive // lines; move the knowledge into code or docs
+comment-essay.cs:11: comment-essay  4-line /* */ block; move the knowledge into code or docs

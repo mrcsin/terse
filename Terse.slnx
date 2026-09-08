@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Terse/Terse.csproj" />
+  <Project Path="Terse.Tests/Terse.Tests.csproj" />
+</Solution>
