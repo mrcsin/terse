@@ -6,6 +6,10 @@
 [![release](https://github.com/mrcsin/terse/actions/workflows/release.yml/badge.svg)](https://github.com/mrcsin/terse/actions/workflows/release.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+```sh
+dotnet tool install -g terse
+```
+
 A comment linter for C#, built for code that AI agents write and humans review. It runs
 as a dotnet tool, on demand or from a git hook. The linter reads the comment trivia of
 every `.cs` file and flags any character outside ASCII, XML docs that grew
