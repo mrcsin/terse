@@ -1,4 +1,4 @@
-﻿using Terse;
+using Terse;
 
 const string Usage = "usage: terse <path>...  |  terse --stdin <name>";
 
@@ -10,7 +10,7 @@ switch (args)
 	case ["--stdin", var name]:
 		if (!Rules.IsExcluded(name))
 		{
-			Lint(name, Console.In.ReadToEnd());
+			Lint(name, ReadStandardInput());
 		}
 
 		break;
@@ -46,7 +46,7 @@ switch (args)
 		{
 			if (!Rules.IsExcluded(file))
 			{
-				Lint(file, File.ReadAllText(fullPath));
+				Lint(file, File.ReadAllBytes(fullPath));
 			}
 		}
 
@@ -65,7 +65,17 @@ switch (args)
 
 return total > 0 ? 1 : 0;
 
-void Lint(string file, string source)
+// Console.In would decode with the console code page and report characters the file does not hold.
+static byte[] ReadStandardInput()
+{
+	using var input = Console.OpenStandardInput();
+	using var buffer = new MemoryStream();
+	input.CopyTo(buffer);
+
+	return buffer.ToArray();
+}
+
+void Lint(string file, ReadOnlySpan<byte> source)
 {
 	foreach (var violation in Rules.Check(source))
 	{

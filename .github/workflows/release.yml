@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
       id-token: write
 
     steps:
@@ -31,6 +32,12 @@ jobs:
           dotnet nuget push Artifacts/package/release/*.nupkg
           --source https://api.nuget.org/v3/index.json
           --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+
+      - run: >
+          dotnet nuget push Artifacts/package/release/*.nupkg
+          --source https://nuget.pkg.github.com/mrcsin/index.json
+          --api-key ${{ github.token }}
+          --skip-duplicate
 
       - run: gh release create "$GITHUB_REF_NAME" --verify-tag --notes-from-tag Artifacts/package/release/*.nupkg
         env:

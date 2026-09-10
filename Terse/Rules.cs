@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -15,6 +15,8 @@ public static class Rules
 	private const int EssayLines = 4;
 	private const string BannerChars = "=-*_~#";
 
+	private static readonly UTF8Encoding _utf8 = new(encoderShouldEmitUTF8Identifier: false, throwOnInvalidBytes: true);
+
 	public static bool IsExcluded(string file)
 	{
 		var path = "/" + file.Replace('\\', '/');
@@ -25,7 +27,28 @@ public static class Rules
 			|| path.Contains("/bin/") || path.Contains("/obj/") || path.Contains("/Artifacts/") || path.Contains("/.git/");
 	}
 
-	public static List<Violation> Check(string source)
+	public static List<Violation> Check(ReadOnlySpan<byte> source)
+	{
+		// A byte order mark records the file's encoding, not its text; the C# compiler skips it too.
+		if (source.StartsWith(Encoding.UTF8.Preamble))
+		{
+			source = source[Encoding.UTF8.Preamble.Length..];
+		}
+
+		try
+		{
+			return CheckText(_utf8.GetString(source));
+		}
+		catch (DecoderFallbackException exception)
+		{
+			var line = source[..exception.Index].Count((byte)'\n') + 1;
+			var value = exception.BytesUnknown is [var first, ..] ? first : (byte)0;
+
+			return [new Violation(line, "non-ascii", $"invalid UTF-8 byte 0x{value:X2}; source is ASCII only")];
+		}
+	}
+
+	private static List<Violation> CheckText(string source)
 	{
 		var tree = CSharpSyntaxTree.ParseText(source);
 		var text = tree.GetText();

@@ -1,4 +1,4 @@
-﻿// Comments the linter lets through. Every shape here is a real comment in real code;
+// Comments the linter lets through. Every shape here is a real comment in real code;
 // the test asserts the file reports nothing.
 
 namespace Terse.Tests;
