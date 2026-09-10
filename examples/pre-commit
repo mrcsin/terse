@@ -4,7 +4,7 @@
 set -euo pipefail
 
 command -v terse >/dev/null 2>&1 || {
-  echo "pre-commit: terse is not on PATH; run: dotnet tool install -g Terse" >&2
+  echo "pre-commit: terse is not on PATH; run: dotnet tool install -g terse" >&2
   exit 1
 }
 

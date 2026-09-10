@@ -1,4 +1,4 @@
-﻿namespace Terse.Tests.Fail;
+namespace Terse.Tests.Fail;
 
 public static class NonAscii
 {
